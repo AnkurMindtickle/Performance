@@ -1,1 +1,1 @@
-from locust
+from locust import HttpLocust
