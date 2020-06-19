@@ -6,7 +6,7 @@ import json
 config = configparser.ConfigParser()
 config.read('common//config.ini')
 
-class api(HttpUser):
+class Api(HttpUser):
     wait_time = constant(1)
     if config['URL1']['include']=='true':
         tag_value = 'tag1'
