@@ -51,12 +51,12 @@ class PostApi(TaskSet):
                 response.success()
 
 
-class LoadTest(HttpUser):
-    tasks = GetApi
-    weight = 1
-    wait_time = constant(1)
+class LoadTest(TaskSet):
+    tasks = {GetApi:1,PostApi:10}
+    #weight = 1
+    #wait_time = constant(1)
 
 class LoadTest1(HttpUser):
-    tasks = PostApi
-    weight = 10
+    tasks = {GetApi:1,PostApi:10}
+    #weight = 10
     wait_time = constant(1)
