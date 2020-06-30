@@ -52,11 +52,12 @@ class PostApi(TaskSet):
 
 
 class LoadTest(TaskSet):
-    tasks = {GetApi:1,PostApi:10}
+    tasks = {GetApi:1,PostApi:5}
     #weight = 1
     #wait_time = constant(1)
 
 class LoadTest1(HttpUser):
-    tasks = {GetApi:1,PostApi:10}
-    #weight = 10
+    tasks = {LoadTest:1}
+    #tasks = {GetApi: 1, PostApi: 5}
+    #weight = 1
     wait_time = constant(1)
